@@ -9,9 +9,9 @@ public class Application {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Estás comprando un helado suave ($30)");
+        System.out.println("Estas comprando un helado suave ($30)");
         while (true) {
-            System.out.println("¿Deseas agregarle algo?");
+            System.out.println("Deseas agregarle algo?");
             System.out.println("[1] Cobertura (+$20)");
             System.out.println("[2] Granola (+$10");
             System.out.println("[3] Topping (+$20)");
@@ -30,23 +30,23 @@ public class Application {
             switch (respuesta) {
                 case 1:
                     helado = new Cobertura(helado);
-                    System.out.println("Se agregó Cobertura");
+                    System.out.println("Se agrego Cobertura");
                     break;
                 case 2:
                     helado = new Granola(helado);
-                    System.out.println("Se agregó Granola");
+                    System.out.println("Se agrego Granola");
                     break;
                 case 3:
                     helado = new Topping(helado);
-                    System.out.println("Se agregó Topping");
+                    System.out.println("Se agrego Topping");
                     break;
                 case 4:
                     helado = new Mermelada(helado);
-                    System.out.println("Se agregó Mermelada");
+                    System.out.println("Se agrego Mermelada");
                     break;
                 case 5:
                     helado = new Galleta(helado);
-                    System.out.println("Se agregó Galleta");
+                    System.out.println("Se agrego Galleta");
                     break;
                 case 6:
                     System.out.println("La orden de tu helado es: " + helado.getDesc());
