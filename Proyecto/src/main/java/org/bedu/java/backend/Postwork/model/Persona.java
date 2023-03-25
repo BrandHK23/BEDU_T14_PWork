@@ -10,7 +10,7 @@ import java.util.Objects;
 public class Persona implements Comparable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public Long id;
 
     @NotBlank(message = "El campo no puede estar vacio")
     private String nombre;

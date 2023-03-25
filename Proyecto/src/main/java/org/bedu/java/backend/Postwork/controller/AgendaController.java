@@ -10,10 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
@@ -38,15 +35,21 @@ public class AgendaController {
 
     @PostMapping("/registro")
     public ModelAndView registra(@Valid Persona persona, Errors errors){
+        if(!errors.hasErrors()){
+            agendaService.guardaPersona(persona);
+        }
 
-        agendaService.guardaPersona(persona);
 
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("listaPersonas",agendaService.getPersonas());
         return modelAndView;
     }
 
-
+    @GetMapping("/deletePersona")
+    public String deletePersona(@RequestParam Long Id) {
+        agendaService.borraPersona(Id);
+        return "redirect:/index";
+    }
 
 
 

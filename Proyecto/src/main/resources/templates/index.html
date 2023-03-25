@@ -42,6 +42,9 @@
               <div class="cell">
                 TELÉFONO
               </div>
+              <div class="cell">
+                ACCIONES
+              </div>
             </div>
 
             <div class="row" th:each="registro : ${listaPersonas}">
@@ -50,6 +53,9 @@
               </div>
               <div class="cell">
                 <p th:text="${ registro.getTelefono()}"></p>
+              </div>
+              <div class="cell">
+                <a th:href="@{/deletePersona(Id=${registro.id})}" class="btn btn-danger ml-2">Delete</a>
               </div>
 
             </div>
@@ -65,7 +71,7 @@
     </div>
   </footer>
 </main>
-<img class="LOGOIMG" src="https://i.ibb.co/pnpbCX1/Logo.png" alt="Equipo 14">
+<img class="LOGOIMG" src="img/Logo.png" alt="Equipo 14">
 
 </body>
 </html>

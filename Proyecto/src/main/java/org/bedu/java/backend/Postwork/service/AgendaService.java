@@ -14,10 +14,13 @@ public class AgendaService {
     private final ValidaTel validaTel;
     private final PersonaRepository personaRepository;
 
+
     @Autowired
     public AgendaService(ValidaTel validaTel, PersonaRepository personaRepository){
         this.validaTel=validaTel;
         this.personaRepository=personaRepository;
+
+
     }
 
     public Persona guardaPersona(Persona persona){
@@ -30,5 +33,7 @@ public class AgendaService {
         return personaRepository.findAll(Sort.by("nombre"));
     }
 
-
+    public void borraPersona(Long Id) {
+        personaRepository.deleteById(Id);
+    }
 }
