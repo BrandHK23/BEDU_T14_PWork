@@ -35,13 +35,13 @@ public class AgendaController {
 
     @PostMapping("/registro")
     public ModelAndView registra(@Valid Persona persona, Errors errors){
+
         if(!errors.hasErrors()){
             agendaService.guardaPersona(persona);
         }
-
-
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("listaPersonas",agendaService.getPersonas());
+
         return modelAndView;
     }
 
