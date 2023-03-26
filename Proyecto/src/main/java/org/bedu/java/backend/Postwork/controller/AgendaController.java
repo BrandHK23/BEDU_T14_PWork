@@ -8,8 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -34,13 +36,20 @@ public class AgendaController {
     }
 
     @PostMapping("/registro")
-    public ModelAndView registra(@Valid Persona persona, Errors errors){
-        if(!errors.hasErrors()){
+    public ModelAndView registra(@Valid Persona persona, BindingResult result){
+        ModelAndView modelAndView = new ModelAndView("index");
+        String err = agendaService.uniqueValidate(persona.getNombre());
+
+        if (!err.isEmpty()) {
+            ObjectError error = new ObjectError("globalError", err);
+            result.addError(error);
+        }
+
+        if(!result.hasErrors()){
             agendaService.guardaPersona(persona);
         }
 
 
-        ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("listaPersonas",agendaService.getPersonas());
         return modelAndView;
     }

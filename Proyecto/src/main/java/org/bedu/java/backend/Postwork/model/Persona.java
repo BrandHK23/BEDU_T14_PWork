@@ -13,14 +13,12 @@ public class Persona implements Comparable{
     public Long id;
 
     @NotBlank(message = "El campo no puede estar vacio")
+    @Column(nullable = false, length = 20)
     private String nombre;
+
     @Column(nullable = false, length = 100)
-
-
     @Pattern(regexp ="^(\\d{2,4}[- .]?){2}\\d{4}$", message = "Formato de teléfono no valido")
     private String telefono;
-    @Column(nullable = false, length = 20)
-
 
     public String getNombre() { return nombre; }
 
@@ -59,6 +57,6 @@ public class Persona implements Comparable{
     @Override
     public int compareTo(Object o){
         Persona other = (Persona) o;
-        return this.nombre.compareTo(other.nombre);
+        return this.nombre.toLowerCase().compareTo(other.nombre.toLowerCase());
     }
 }

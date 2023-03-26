@@ -36,4 +36,14 @@ public class AgendaService {
     public void borraPersona(Long Id) {
         personaRepository.deleteById(Id);
     }
+
+    public String uniqueValidate(String nombre) {
+        String err = "";
+        if (personaRepository.findByNombre(nombre).size() != 0) {
+            err += "Nombre ya existe";
+        }
+
+        return err;
+
+    }
 }
