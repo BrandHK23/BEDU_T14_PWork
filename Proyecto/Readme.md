@@ -5,7 +5,7 @@
 
 <h3 align="left">About</h3>
 
-El proyecto final presentado es una aplicación que permite al usuario registrar contactos solicitando el nombre y telefono a traves de una interfaz gráfica, perimitiendole guardarlos para poder acceder a esa información, al momento de llenar los campos el programa revisa que los datos estén en el formato correcto segun corresponda, lanzando errores en casos donde el dato ingresado no sea válido. Además crea una lista con los usuarios agregados correctamente.(Pendiente)
+El proyecto final presentado es una aplicación que permite al usuario registrar contactos solicitando el nombre y telefono a traves de una interfaz gráfica, perimitiendole guardarlos para poder acceder a esa información, al momento de llenar los campos el programa revisa que los datos estén en el formato correcto segun corresponda, lanzando errores en casos donde el dato ingresado no sea válido. Además crea una lista con los usuarios agregados correctamente.
 
 ## :hammer: Funciones del proyecto
 
