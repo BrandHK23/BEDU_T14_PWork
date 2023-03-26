@@ -2,8 +2,8 @@
 Repositorio equipo 14 postwork
 
 Integrantes:
-Hector
-Miguel
-Brandon
-Hassan
+Hector, 
+Miguel, 
+Brandon, 
+Hassan, 
 Ricardo
