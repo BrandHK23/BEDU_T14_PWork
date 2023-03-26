@@ -74,5 +74,15 @@
 </main>
 <img class="LOGOIMG" src="img/Logo.png" alt="Equipo 14">
 
+<script>
+  window.addEventListener("load", () => {
+      let messagesError = document.querySelectorAll(".error");
+      if(messagesError.length == 0){
+        document.querySelector("#nombre").value = "";
+	    document.querySelector("#telefono").value = "";
+      }
+  })
+</script>
+
 </body>
 </html>
