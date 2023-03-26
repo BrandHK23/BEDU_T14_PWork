@@ -36,7 +36,6 @@ public class AgendaController {
     }
 
     @PostMapping("/registro")
-<<<<<<< HEAD
     public ModelAndView registra(@Valid Persona persona, BindingResult result){
         ModelAndView modelAndView = new ModelAndView("index");
         String err = agendaService.uniqueValidate(persona.getNombre());
@@ -50,15 +49,6 @@ public class AgendaController {
             agendaService.guardaPersona(persona);
         }
 
-
-=======
-    public ModelAndView registra(@Valid Persona persona, Errors errors){
-
-        if(!errors.hasErrors()){
-            agendaService.guardaPersona(persona);
-        }
-        ModelAndView modelAndView = new ModelAndView("index");
->>>>>>> 62d77dbf3ec33603e161b3f6502172bba3b1ffbc
         modelAndView.addObject("listaPersonas",agendaService.getPersonas());
 
         return modelAndView;
